@@ -1667,7 +1667,8 @@ def create_tables(connection):
         # users
         connection.execute(sql_create_users_table)
         default_admin_password = "admin"
-        hashed_password = stauth.Hasher([default_admin_password]).generate()
+        # hashed_password = stauth.Hasher([default_admin_password]).generate()
+        hashed_password = stauth.utilities.hasher.Hasher.hash(default_admin_password)
         connection.execute(sql_users_add_admin, ("admin", "admin@admin.com", "admin", hashed_password[0]))
         # balances
         connection.execute(sql_create_balances_table)
