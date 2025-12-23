@@ -47,8 +47,8 @@ nest-asyncio>=1.5.6
 numpy>=1.26.3
 oauthlib>=3.2.2
 packaging>=23.2
-pandas>=1.5.3
-pandas_ta
+pandas>=1.5.3,<2.3
+pandas-ta>=0.3.14b0
 parso>=0.8.3
 pexpect>=4.8.0
 pickleshare>=0.7.5
