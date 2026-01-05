@@ -10,11 +10,29 @@ Trading bot for Binance exchange using EMA cross strategy with Telegram integrat
 ```
 python 3.12.12
 ```
+
 add an env variable `demo=true` to test with Binance [DEMO network](https://demo.binance.com/).  
 Note that Binance demo is different than Binance testnet.  
 
 [Installation instructions](https://docs.google.com/document/d/1ERtxjcdrznMWXragmBh5ZimIn6_PGn2sde0j_x4CktA/edit?usp=sharing)
 
+## Screen
+```
+# Install screen if not already installed
+sudo apt install screen
+
+# Create a new screen session
+screen -S dashboard
+
+# Run streamlit inside the screen
+python -m streamlit run dashboard.py --server.port 8501 --server.address 0.0.0.0
+
+# Detach from screen: Press Ctrl+A, then D
+```
+To reconnect later:
+```
+screen -r dashboard
+```
 ## Updates
 Follow the last updates from the change log [here](https://github.com/jptsantossilva/BEC/blob/main/CHANGELOG.md)
 
