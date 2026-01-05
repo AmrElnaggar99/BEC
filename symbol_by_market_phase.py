@@ -163,7 +163,7 @@ def set_market_phases_to_symbols(symbols, time_frame):
     ]
     # Set market phase for each symbol
     values = ['recovery', 'accumulation', 'bullish', 'warning', 'distribution', 'bearish']
-    df_result['Market_Phase'] = np.select(conditions, values)
+    df_result['Market_Phase'] = np.select(conditions, values, default='unknown')
 
     return df_result
 
