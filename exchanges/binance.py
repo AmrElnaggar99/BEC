@@ -35,11 +35,17 @@ def get_env_var(var_name):
 def connect():
     api_key = get_env_var('binance_api')
     api_secret = get_env_var('binance_secret')
+    demo = get_env_var('demo')
+    use_demo = True if demo.lower() == 'true' else False
 
     # Binance Client
     try:
         global client
-        client = Client(api_key, api_secret)
+        client = Client(api_key, api_secret, demo=use_demo)
+        if use_demo:
+            print("Connected to Binance DEMO (sandbox trading)")
+        else:
+            print("Connected to Binance MAINNET (real trading)")
     except Exception as e:
             msg = "Error connecting to Binance. "+ repr(e)
             print(msg)
