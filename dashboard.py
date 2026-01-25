@@ -1761,7 +1761,10 @@ def main():
         cookie_expiry_days=30
     )
 
-    name, authentication_status, username = authenticator.login('Login', 'main')
+    authenticator.login(location='main')
+    name = st.session_state.get('name')
+    authentication_status = st.session_state.get('authentication_status')
+    username = st.session_state.get('username')
     st.session_state.name = name
     st.session_state.username = username
     # st.session_state.user_password = authenticator.credentials['usernames'][username]['password']
